@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de bord</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body>
+<nav class="top-nav">
+  <div class="logo-area">
+    <i class="fas fa-school"></i> <span>JGOSCHOOL</span>
+  </div>
+  <div class="menu">
+    <a href="/sectors" th:href="@{/sectors}"><i class="fas fa-layer-group"></i> Secteurs</a>
+    <a href="/classes" th:href="@{/classes}"><i class="fas fa-chalkboard"></i> Classes</a>
+  </div>
+</nav>
+
+<main class="dashboard">
+  <header class="welcome-section">
+    <h1>Tableau de bord</h1>
+    <p>Bienvenue sur votre tableau de gestion académique</p>
+  </header>
+
+  <section class="grid-cards">
+    <a href="/sectors" class="card">
+      <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+      <div class="card-info">
+        <h3>Secteurs</h3>
+        <p>Consulter & modifier les secteurs</p>
+      </div>
+    </a>
+    <a href="/classes" class="card">
+      <div class="card-icon"><i class="fas fa-users-class"></i></div>
+      <div class="card-info">
+        <h3>Classes</h3>
+        <p>Gérer les classes académiques</p>
+      </div>
+    </a>
+  </section>
+
+  <section class="recent-items">
+    <div class="recent-box">
+      <h2>Secteurs récents</h2>
+      <ul th:if="${!#lists.isEmpty(lastSectors)}">
+        <li th:each="sector : ${lastSectors}">
+          <strong th:text="${sector.name}">Nom</strong>
+          <span th:text="${sector.description}">Description</span>
+        </li>
+      </ul>
+      <p class="empty" th:if="${#lists.isEmpty(lastSectors)}">Aucun secteur trouvé.</p>
+      <a href="/sectors" class="view-more">Voir tout</a>
+    </div>
+    <div class="recent-box">
+      <h2>Classes récentes</h2>
+      <ul th:if="${!#lists.isEmpty(lastClasses)}">
+        <li th:each="classe : ${lastClasses}">
+          <strong th:text="${classe.className}">Classe</strong>
+          <span th:text="${classe.description}">Description</span>
+          <small th:text="'Secteur : ' + ${classe.sector?.name ?: 'Non défini'}"></small>
+        </li>
+      </ul>
+      <p class="empty" th:if="${#lists.isEmpty(lastClasses)}">Aucune classe enregistrée.</p>
+      <a href="/classes" class="view-more">Voir tout</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2025 <a href="https://github.com/Djigo02/exam-spring-thymeleaf-ngor-seck">JGOTECHMAKER</a> . Tous droits réservés.</p>
+</footer>
+</body>
+</html>
