@@ -40,32 +40,6 @@
       </div>
     </a>
   </section>
-
-  <section class="recent-items">
-    <div class="recent-box">
-      <h2>Secteurs récents</h2>
-      <ul th:if="${!#lists.isEmpty(lastSectors)}">
-        <li th:each="sector : ${lastSectors}">
-          <strong th:text="${sector.name}">Nom</strong>
-          <span th:text="${sector.description}">Description</span>
-        </li>
-      </ul>
-      <p class="empty" th:if="${#lists.isEmpty(lastSectors)}">Aucun secteur trouvé.</p>
-      <a href="/sectors" class="view-more">Voir tout</a>
-    </div>
-    <div class="recent-box">
-      <h2>Classes récentes</h2>
-      <ul th:if="${!#lists.isEmpty(lastClasses)}">
-        <li th:each="classe : ${lastClasses}">
-          <strong th:text="${classe.className}">Classe</strong>
-          <span th:text="${classe.description}">Description</span>
-          <small th:text="'Secteur : ' + ${classe.sector?.name ?: 'Non défini'}"></small>
-        </li>
-      </ul>
-      <p class="empty" th:if="${#lists.isEmpty(lastClasses)}">Aucune classe enregistrée.</p>
-      <a href="/classes" class="view-more">Voir tout</a>
-    </div>
-  </section>
 </main>
 
 <footer class="footer">
