@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des Secteurs</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/main.css}">
 
 </head>
 <body>
+<nav class="top-nav">
+    <div class="logo-area">
+        <i class="fas fa-school"></i> <span>JGOSCHOOL</span>
+    </div>
+    <div class="menu">
+        <a href="/sectors" th:href="@{/sectors}"><i class="fas fa-layer-group"></i> Secteurs</a>
+        <a href="/classes" th:href="@{/classes}"><i class="fas fa-chalkboard"></i> Classes</a>
+    </div>
+</nav>
 <div class="container">
     <div class="header">
         <div class="header-left">
@@ -21,11 +30,6 @@
     </div>
 
     <div class="table-container">
-        <div class="table-header">
-            <div class="table-title">Secteurs d'Activité</div>
-            <div class="table-description">Vue d'ensemble de tous les secteurs enregistrés</div>
-        </div>
-
         <table>
             <thead>
             <tr>
@@ -57,7 +61,6 @@
                 <td colspan="2" class="empty-state">
                     <div class="empty-icon">📋</div>
                     <div>Aucun secteur trouvé</div>
-                    <div style="font-size: 0.85rem; margin-top: 0.5rem;">Ajoutez votre premier secteur pour commencer</div>
                 </td>
             </tr>
             </tbody>

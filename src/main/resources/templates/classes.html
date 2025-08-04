@@ -35,8 +35,8 @@
 
     <div class="table-container">
         <div class="table-header">
-            <div class="table-title">Secteurs d'Activité</div>
-            <div class="table-description">Vue d'ensemble de tous les secteurs enregistrés</div>
+            <div class="table-title">Liste des classes</div>
+            <div class="table-description">Vue d'ensemble de toutes les classes et leur secteur</div>
         </div>
 
         <table>
@@ -76,7 +76,7 @@
             <tr th:if="${#lists.isEmpty(classes)}">
                 <td colspan="2" class="empty-state">
                     <div class="empty-icon">📋</div>
-                    <div>Aucun secteur trouvé</div>
+                    <div>Aucune classe trouvée</div>
                     <div style="font-size: 0.85rem; margin-top: 0.5rem;">Ajoutez votre premier secteur pour commencer
                     </div>
                 </td>

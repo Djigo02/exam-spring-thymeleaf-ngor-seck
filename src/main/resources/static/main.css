@@ -202,7 +202,7 @@ body {
 }
 
 .add-sector-btn {
-    background-color: #2563eb;
+    background-color: #47931e;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -213,7 +213,7 @@ body {
 }
 
 .add-sector-btn:hover {
-    background-color: #1e40af;
+    background-color: #0c6007;
 }
 
 /* Tableau */
@@ -267,12 +267,12 @@ tr:hover {
 }
 
 .edit-btn {
-    background-color: #22c55e;
+    background-color: #929f0a;
     color: white;
 }
 
 .delete-btn {
-    background-color: #ef4444;
+    background-color: #730505;
     color: white;
 }
 
@@ -356,4 +356,130 @@ tr:hover {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+
+/*MODALLLLL*/
+
+/* 🌙 Overlay général de la modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* fond assombri */
+}
+
+/* 📦 Contenu de la modale */
+.modal-content {
+    background-color: #ffffff;
+    margin: 6% auto;
+    padding: 30px 40px;
+    border: 1px solid #e2e8f0;
+    width: 500px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ❌ Bouton de fermeture */
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* 🧾 Titres de section */
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* 📄 Champs formulaire */
+.modal-content form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.modal-content form input[type="text"],
+.modal-content form select {
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    font-size: 0.95rem;
+}
+
+/* ✅ Bouton principal */
+.modal-content form button[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content form button[type="submit"]:hover {
+    background-color: #1e40af;
+}
+
+/* 🗑️ Bouton de suppression */
+.modal-content .delete-btn {
+    background-color: #ef4444 !important;
+    color: white;
+}
+
+.modal-content .delete-btn:hover {
+    background-color: #dc2626 !important;
+}
+
+/* 🔙 Bouton annuler */
+.modal-content button[type="button"] {
+    background-color: #94a3b8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal-content button[type="button"]:hover {
+    background-color: #64748b;
+}
+
+/* ✨ Animation d’apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
